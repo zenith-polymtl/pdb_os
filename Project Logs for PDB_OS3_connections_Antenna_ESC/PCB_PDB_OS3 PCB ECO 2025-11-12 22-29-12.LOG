@@ -1,0 +1,10 @@
+Change Component Designator: OldDesignator=J? NewDesignator=J1
+Change Component Designator: OldDesignator=J? NewDesignator=J2
+Change Component Designator: OldDesignator=J? NewDesignator=J3
+Change Component Designator: OldDesignator=J? NewDesignator=J4
+Added Member To Class: ClassName=PDB_OS3_connections Member=Component C1 ECA1HM220
+Added Member To Class: ClassName=PDB_OS3_connections Member=Component C2 ECA1HM220
+Added Member To Class: ClassName=PDB_OS3_connections Member=Component D1 23V 600W
+Added Member To Class: ClassName=PDB_OS3_connections Member=Component J2 XT60PB-F
+Added Member To Class: ClassName=PDB_OS3_connections Member=Component J3 XT60PB-F
+Added Member To Class: ClassName=PDB_OS3_connections Member=Component J4 XT60PB-F

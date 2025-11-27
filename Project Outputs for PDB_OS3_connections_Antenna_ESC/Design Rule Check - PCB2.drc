@@ -1,0 +1,107 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc
+Date     : 2025-11-26
+Time     : 22:25:28
+
+Processing Rule : Clearance Constraint (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Arc (151.765mm,45.466mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Arc (152.019mm,109.474mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Arc (53.721mm,109.22mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Arc (53.721mm,45.466mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C3-2(110.617mm,50.292mm) on Multi-Layer And Pad C2-2(110.871mm,62.992mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C4-1(89.742mm,58.039mm) on Multi-Layer And Pad C2-2(110.871mm,62.992mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C2-2(110.871mm,62.992mm) on Multi-Layer And Via (116.713mm,60.96mm) from Top Layer to Bottom Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C4-1(89.742mm,58.039mm) on Multi-Layer And Pad JVcc-N(93.97mm,75.068mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Track (69.723mm,62.02mm)(69.954mm,61.789mm) on Bottom Layer And Pad C4-1(89.742mm,58.039mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (116.713mm,60.96mm) from Top Layer to Bottom Layer And Pad J1-N(145.669mm,62.02mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J3-N(105.156mm,104.819mm) on Multi-Layer And Pad J2-N(133.731mm,101.39mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J4-N(69.088mm,99.993mm) on Multi-Layer And Pad J3-N(105.156mm,104.819mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J4-N(69.088mm,99.993mm) on Multi-Layer And Pad J5-N(69.723mm,62.02mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Polygon  (NONET_L04_P000) on Bottom Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Split Plane  (No Net) on Int1 (GND) Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Split Plane  (No Net) on Int2 (PWR) Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (110.998mm,114.3mm)(112.522mm,114.808mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (110.998mm,115.316mm)(112.522mm,114.808mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (112.522mm,114.554mm)(112.522mm,115.57mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (153.035mm,45.466mm)(153.035mm,109.474mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (46.736mm,59.69mm)(49.276mm,59.69mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (47.752mm,59.182mm)(49.276mm,59.69mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (47.752mm,60.198mm)(49.276mm,59.69mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (49.276mm,59.436mm)(49.276mm,110.236mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (49.276mm,59.436mm)(49.276mm,59.944mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (49.276mm,59.69mm)(50.8mm,59.182mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (49.276mm,59.69mm)(50.8mm,60.198mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (49.276mm,59.69mm)(51.816mm,59.69mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (52.07mm,114.554mm)(52.07mm,114.935mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (52.07mm,114.808mm)(53.594mm,114.3mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (52.07mm,114.808mm)(53.594mm,115.316mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (52.07mm,114.808mm)(77.928mm,114.808mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (52.451mm,45.466mm)(52.451mm,109.22mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (53.721mm,110.49mm)(72.39mm,110.49mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (53.721mm,44.196mm)(151.765mm,44.196mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (72.39mm,110.49mm)(152.019mm,110.49mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (85.851mm,114.808mm)(112.522mm,114.808mm) on Top Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Net GND Between Via (116.713mm,60.96mm) from Top Layer to Bottom Layer And Via (124.206mm,48.641mm) from Top Layer to Bottom Layer 
+Rule Violations :38
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.254mm) (Max=0.254mm) (Preferred=0.254mm) (All)
+Rule Violations :0
+
+Processing Rule : Routing Topology Rule(Topology=Shortest) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)
+   Violation between Hole Size Constraint: (4.55mm > 2.54mm) Pad J1-N(145.669mm,62.02mm) on Multi-Layer Actual Hole Size = 4.55mm
+   Violation between Hole Size Constraint: (4.55mm > 2.54mm) Pad J1-P(145.669mm,54.82mm) on Multi-Layer Actual Hole Size = 4.55mm
+   Violation between Hole Size Constraint: (4.55mm > 2.54mm) Pad J2-N(133.731mm,101.39mm) on Multi-Layer Actual Hole Size = 4.55mm
+   Violation between Hole Size Constraint: (4.55mm > 2.54mm) Pad J2-P(133.731mm,94.19mm) on Multi-Layer Actual Hole Size = 4.55mm
+   Violation between Hole Size Constraint: (4.55mm > 2.54mm) Pad J3-N(105.156mm,104.819mm) on Multi-Layer Actual Hole Size = 4.55mm
+   Violation between Hole Size Constraint: (4.55mm > 2.54mm) Pad J3-P(105.156mm,97.619mm) on Multi-Layer Actual Hole Size = 4.55mm
+   Violation between Hole Size Constraint: (4.55mm > 2.54mm) Pad J4-N(69.088mm,99.993mm) on Multi-Layer Actual Hole Size = 4.55mm
+   Violation between Hole Size Constraint: (4.55mm > 2.54mm) Pad J4-P(69.088mm,92.793mm) on Multi-Layer Actual Hole Size = 4.55mm
+   Violation between Hole Size Constraint: (4.55mm > 2.54mm) Pad J5-N(69.723mm,62.02mm) on Multi-Layer Actual Hole Size = 4.55mm
+   Violation between Hole Size Constraint: (4.55mm > 2.54mm) Pad J5-P(69.723mm,54.82mm) on Multi-Layer Actual Hole Size = 4.55mm
+   Violation between Hole Size Constraint: (3.9mm > 2.54mm) Pad JVcc-N(93.97mm,75.068mm) on Multi-Layer Actual Hole Size = 3.9mm
+   Violation between Hole Size Constraint: (3.9mm > 2.54mm) Pad JVcc-P(93.97mm,85.968mm) on Multi-Layer Actual Hole Size = 3.9mm
+Rule Violations :12
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)
+   Violation between Minimum Solder Mask Sliver Constraint: (0.179mm < 0.254mm) Between Pad C1-1(116.775mm,62.357mm) on Top Layer And Via (116.713mm,60.96mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.179mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.079mm < 0.254mm) Between Pad D1-C(126.873mm,48.592mm) on Top Layer And Via (124.206mm,48.641mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.079mm]
+Rule Violations :2
+
+Processing Rule : Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Pad C4-1(89.742mm,58.039mm) on Multi-Layer And Text ".Designator" (88.749mm,57.404mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+Rule Violations :1
+
+Processing Rule : Silk to Silk (Clearance=0.254mm) (All),(All)
+   Violation between Silk To Silk Clearance Constraint: (0.233mm < 0.254mm) Between Arc (109.617mm,50.292mm) on Top Overlay And Text "+" (105.709mm,49.555mm) on Top Overlay Silk Text to Silk Clearance [0.233mm]
+   Violation between Silk To Silk Clearance Constraint: (0.233mm < 0.254mm) Between Arc (109.871mm,62.992mm) on Top Overlay And Text "+" (105.963mm,62.255mm) on Top Overlay Silk Text to Silk Clearance [0.233mm]
+Rule Violations :2
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+   Violation between Net Antennae: Via (124.206mm,48.641mm) from Top Layer to Bottom Layer 
+Rule Violations :1
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 56
+Waived Violations : 0
+Time Elapsed        : 00:00:01

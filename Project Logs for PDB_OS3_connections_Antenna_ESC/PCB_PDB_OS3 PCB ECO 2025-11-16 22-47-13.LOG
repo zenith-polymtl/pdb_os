@@ -1,0 +1,27 @@
+Removed Pin From Net: NetName=NetC1_1 Pin=D1-1
+Removed Pin From Net: NetName=GND Pin=D1-2
+Change Component Designator: OldDesignator=J? NewDesignator=J1
+Change Component Designator: OldDesignator=J? NewDesignator=J2
+Added Component: Designator=CR1(SMDJSeries_LTF)
+Add component (AddParameter): Name = "Copyright"; Value = "Copyright (C) 2025 Ultra Librarian. All rights reserved."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Littelfuse Inc"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "SMDJ36CA"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "RefDes"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Type"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=J5(XT60PB-F)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.tme.com/Document/aa7a0328674fda4109d00dc748bb5162/XT60UPB-F.pdf"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC1_1 Pin=CR1-1
+Added Pin To Net: NetName=GND Pin=CR1-2
+Added Pin To Net: NetName=GND Pin=J5-N
+Added Pin To Net: NetName=NetC1_1 Pin=J5-P
+Added Member To Class: ClassName=PDB_OS3_connections Member=Component C1 ECA1HM220
+Added Member To Class: ClassName=PDB_OS3_connections Member=Component C2 ECA1HM220
+Added Member To Class: ClassName=PDB_OS3_connections Member=Component C3 680µF 50V
+Added Member To Class: ClassName=PDB_OS3_connections Member=Component CR1 SMDJ36CA
+Added Member To Class: ClassName=PDB_OS3_connections Member=Component J1 XT60PB-F
+Added Member To Class: ClassName=PDB_OS3_connections Member=Component J2 XT60PB-F
+Added Member To Class: ClassName=PDB_OS3_connections Member=Component J3 XT60PB-F
+Added Member To Class: ClassName=PDB_OS3_connections Member=Component J4 XT60PB-F
+Added Member To Class: ClassName=PDB_OS3_connections Member=Component J5 XT60PB-F
+Added Member To Class: ClassName=PDB_OS3_connections Member=Component JVcc XT90PW-F

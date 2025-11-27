@@ -1,0 +1,520 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 9em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD25\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">2025-11-26</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">22:25:28</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:01</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc" class="file"><acronym title="C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc">C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">56</td></tr>
+</table>
+</td>
+</table><a name="IDZBIYD5QYYSCPIT0CPRJZIZQDEFKGVRLWMI3JEMCHCAFSE3L4COMH"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID3H0FMRP54GCXDHU4VZTURTTJ3HPLOO45K1SYG4ENU4G40AIFQNCG">Clearance Constraint (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDN0IJJYKCTAW3KEQFV1453JHEVOW1YTSIFCHCBCCDRKVCC2WQH4VF">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDOFUNMBARWMYKPA3EWBEDNLTXQOMC4JTQUPIFBWLLY0N1JT2THOIN">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">38</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDSDRPG0IMW1ILN301XW3XULKBHDCDKZ4FP2EC1EEITMPZILNWF4D">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVORCQ3BWOZKGK4DCVKTAEBD2RNMITJA3TWF5TPPVJSJOJJJHDNRH">Width Constraint (Min=0.254mm) (Max=0.254mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDC1Z4DFU5N2RSH2OBSJFLODBLFLW3W5FWOAARDTFQFJJMXDG4YCBN">Routing Topology Rule(Topology=Shortest) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDW4IME2AODGV1JXBVABJNUCBE2KPP1R3GMQHQ25DVJ22PLIJVDUYN">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVWVUUKZSFOCUBNPRPEO33BBX4HPGMZG4WUA1R5PJPEF45FBV5D2H">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</a></td>
+<td class="column2">12</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDZI0TRW0HVTLOGAE4N0HC1M24QKTGRZ4FR1ASKMMMU5C3WNU2W5OI">Hole To Hole Clearance (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDS3HLCNOGPSAUG4J1JESVCJCHLHOAITWM0V1G11E3MEPV5ZHSG5FC">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAF5QKQJ2AMOWPOS0KLJGINUUNPE4ZIK5LPRXICIEKDUJWSL2Q5VC">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4SB2PRHKK001LE3GBL1HVPWZYLBOLZOVWYKJ0C1ERHX0BXM0N1J">Silk to Silk (Clearance=0.254mm) (All),(All)</a></td>
+<td class="column2">2</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDST1SGJ12APZYCJ2XO4XRQ5D1OFIKAYRNJLBTAZKG1E4WGPG5MBLL">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAO5N2T2SQA45DJK2VYF1YYTMTN4Z2JHMNPQXFJFYPRFGRCFH15GI">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">56</td>
+</tr>
+</table><br><a name="IDOFUNMBARWMYKPA3EWBEDNLTXQOMC4JTQUPIFBWLLY0N1JT2THOIN"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5970mil|Location2.X=6030mil|Location1.Y=1735mil|Location2.Y=1795mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5970mil|Location2.X=6030mil|Location1.Y=1735mil|Location2.Y=1795mil|Absolute=True">Un-Routed Net Constraint: Arc (151.765mm,45.466mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5980mil|Location2.X=6030mil|Location1.Y=4305mil|Location2.Y=4355mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5980mil|Location2.X=6030mil|Location1.Y=4305mil|Location2.Y=4355mil|Absolute=True">Un-Routed Net Constraint: Arc (152.019mm,109.474mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2060mil|Location2.X=2120mil|Location1.Y=4295mil|Location2.Y=4355mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2060mil|Location2.X=2120mil|Location1.Y=4295mil|Location2.Y=4355mil|Absolute=True">Un-Routed Net Constraint: Arc (53.721mm,109.22mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2060mil|Location2.X=2120mil|Location1.Y=1735mil|Location2.Y=1795mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2060mil|Location2.X=2120mil|Location1.Y=1735mil|Location2.Y=1795mil|Absolute=True">Un-Routed Net Constraint: Arc (53.721mm,45.466mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4319.252mil|Location2.X=4400.748mil|Location1.Y=1944.252mil|Location2.Y=2515.748mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4319.252mil|Location2.X=4400.748mil|Location1.Y=1944.252mil|Location2.Y=2515.748mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C3-2(110.617mm,50.292mm) on Multi-Layer And Pad C2-2(110.871mm,62.992mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3495.15mil|Location2.X=4400.748mil|Location1.Y=2247mil|Location2.Y=2515.748mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3495.15mil|Location2.X=4400.748mil|Location1.Y=2247mil|Location2.Y=2515.748mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C4-1(89.742mm,58.039mm) on Multi-Layer And Pad C2-2(110.871mm,62.992mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4329.252mil|Location2.X=4629mil|Location1.Y=2366mil|Location2.Y=2515.748mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4329.252mil|Location2.X=4629mil|Location1.Y=2366mil|Location2.Y=2515.748mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C2-2(110.871mm,62.992mm) on Multi-Layer And Via (116.713mm,60.96mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3495.15mil|Location2.X=3800.378mil|Location1.Y=2247mil|Location2.Y=3056.205mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3495.15mil|Location2.X=3800.378mil|Location1.Y=2247mil|Location2.Y=3056.205mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C4-1(89.742mm,58.039mm) on Multi-Layer And Pad JVcc-N(93.97mm,75.068mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.079mil|Location2.X=3633.15mil|Location1.Y=2332.654mil|Location2.Y=2385mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.079mil|Location2.X=3633.15mil|Location1.Y=2332.654mil|Location2.Y=2385mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Track (69.723mm,62.02mm)(69.954mm,61.789mm) on Bottom Layer And Pad C4-1(89.742mm,58.039mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4561mil|Location2.X=5857.11mil|Location1.Y=2319.622mil|Location2.Y=2563.843mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4561mil|Location2.X=5857.11mil|Location1.Y=2319.622mil|Location2.Y=2563.843mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (116.713mm,60.96mm) from Top Layer to Bottom Layer And Pad J1-N(145.669mm,62.02mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4017.89mil|Location2.X=5387.11mil|Location1.Y=3869.622mil|Location2.Y=4248.842mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4017.89mil|Location2.X=5387.11mil|Location1.Y=3869.622mil|Location2.Y=4248.842mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad J3-N(105.156mm,104.819mm) on Multi-Layer And Pad J2-N(133.731mm,101.39mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2597.89mil|Location2.X=4262.11mil|Location1.Y=3814.622mil|Location2.Y=4248.842mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2597.89mil|Location2.X=4262.11mil|Location1.Y=3814.622mil|Location2.Y=4248.842mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad J4-N(69.088mm,99.993mm) on Multi-Layer And Pad J3-N(105.156mm,104.819mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2597.89mil|Location2.X=2867.11mil|Location1.Y=2319.622mil|Location2.Y=4058.843mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2597.89mil|Location2.X=2867.11mil|Location1.Y=2319.622mil|Location2.Y=4058.843mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad J4-N(69.088mm,99.993mm) on Multi-Layer And Pad J5-N(69.723mm,62.02mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2075mil|Location2.X=6020mil|Location1.Y=1745mil|Location2.Y=4350mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2075mil|Location2.X=6020mil|Location1.Y=1745mil|Location2.Y=4350mil|Absolute=True">Un-Routed Net Constraint: Polygon  (NONET_L04_P000) on Bottom Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2085.047mil|Location2.X=6004.953mil|Location1.Y=1760.047mil|Location2.Y=4329.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2085.047mil|Location2.X=6004.953mil|Location1.Y=1760.047mil|Location2.Y=4329.953mil|Absolute=True">Un-Routed Net Constraint: Split Plane  (No Net) on Int1 (GND) Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2085.047mil|Location2.X=6004.953mil|Location1.Y=1760.047mil|Location2.Y=4329.953mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2085.047mil|Location2.X=6004.953mil|Location1.Y=1760.047mil|Location2.Y=4329.953mil|Absolute=True">Un-Routed Net Constraint: Split Plane  (No Net) on Int2 (PWR) Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4365mil|Location2.X=4435mil|Location1.Y=4495mil|Location2.Y=4525mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4365mil|Location2.X=4435mil|Location1.Y=4495mil|Location2.Y=4525mil|Absolute=True">Un-Routed Net Constraint: Track (110.998mm,114.3mm)(112.522mm,114.808mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4365mil|Location2.X=4435mil|Location1.Y=4515mil|Location2.Y=4545mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4365mil|Location2.X=4435mil|Location1.Y=4515mil|Location2.Y=4545mil|Absolute=True">Un-Routed Net Constraint: Track (110.998mm,115.316mm)(112.522mm,114.808mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4425mil|Location2.X=4435mil|Location1.Y=4505mil|Location2.Y=4555mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4425mil|Location2.X=4435mil|Location1.Y=4505mil|Location2.Y=4555mil|Absolute=True">Un-Routed Net Constraint: Track (112.522mm,114.554mm)(112.522mm,115.57mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6020mil|Location2.X=6030mil|Location1.Y=1785mil|Location2.Y=4315mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6020mil|Location2.X=6030mil|Location1.Y=1785mil|Location2.Y=4315mil|Absolute=True">Un-Routed Net Constraint: Track (153.035mm,45.466mm)(153.035mm,109.474mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1835mil|Location2.X=1945mil|Location1.Y=2345mil|Location2.Y=2355mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1835mil|Location2.X=1945mil|Location1.Y=2345mil|Location2.Y=2355mil|Absolute=True">Un-Routed Net Constraint: Track (46.736mm,59.69mm)(49.276mm,59.69mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1875mil|Location2.X=1945mil|Location1.Y=2325mil|Location2.Y=2355mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1875mil|Location2.X=1945mil|Location1.Y=2325mil|Location2.Y=2355mil|Absolute=True">Un-Routed Net Constraint: Track (47.752mm,59.182mm)(49.276mm,59.69mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1875mil|Location2.X=1945mil|Location1.Y=2345mil|Location2.Y=2375mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1875mil|Location2.X=1945mil|Location1.Y=2345mil|Location2.Y=2375mil|Absolute=True">Un-Routed Net Constraint: Track (47.752mm,60.198mm)(49.276mm,59.69mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1935mil|Location2.X=1945mil|Location1.Y=2335mil|Location2.Y=4345mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1935mil|Location2.X=1945mil|Location1.Y=2335mil|Location2.Y=4345mil|Absolute=True">Un-Routed Net Constraint: Track (49.276mm,59.436mm)(49.276mm,110.236mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1935mil|Location2.X=1945mil|Location1.Y=2335mil|Location2.Y=2365mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1935mil|Location2.X=1945mil|Location1.Y=2335mil|Location2.Y=2365mil|Absolute=True">Un-Routed Net Constraint: Track (49.276mm,59.436mm)(49.276mm,59.944mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1935mil|Location2.X=2005mil|Location1.Y=2325mil|Location2.Y=2355mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1935mil|Location2.X=2005mil|Location1.Y=2325mil|Location2.Y=2355mil|Absolute=True">Un-Routed Net Constraint: Track (49.276mm,59.69mm)(50.8mm,59.182mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1935mil|Location2.X=2005mil|Location1.Y=2345mil|Location2.Y=2375mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1935mil|Location2.X=2005mil|Location1.Y=2345mil|Location2.Y=2375mil|Absolute=True">Un-Routed Net Constraint: Track (49.276mm,59.69mm)(50.8mm,60.198mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1935mil|Location2.X=2045mil|Location1.Y=2345mil|Location2.Y=2355mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1935mil|Location2.X=2045mil|Location1.Y=2345mil|Location2.Y=2355mil|Absolute=True">Un-Routed Net Constraint: Track (49.276mm,59.69mm)(51.816mm,59.69mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2045mil|Location2.X=2055mil|Location1.Y=4505mil|Location2.Y=4530mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2045mil|Location2.X=2055mil|Location1.Y=4505mil|Location2.Y=4530mil|Absolute=True">Un-Routed Net Constraint: Track (52.07mm,114.554mm)(52.07mm,114.935mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2045mil|Location2.X=2115mil|Location1.Y=4495mil|Location2.Y=4525mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2045mil|Location2.X=2115mil|Location1.Y=4495mil|Location2.Y=4525mil|Absolute=True">Un-Routed Net Constraint: Track (52.07mm,114.808mm)(53.594mm,114.3mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2045mil|Location2.X=2115mil|Location1.Y=4515mil|Location2.Y=4545mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2045mil|Location2.X=2115mil|Location1.Y=4515mil|Location2.Y=4545mil|Absolute=True">Un-Routed Net Constraint: Track (52.07mm,114.808mm)(53.594mm,115.316mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2045mil|Location2.X=3073.045mil|Location1.Y=4515mil|Location2.Y=4525mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2045mil|Location2.X=3073.045mil|Location1.Y=4515mil|Location2.Y=4525mil|Absolute=True">Un-Routed Net Constraint: Track (52.07mm,114.808mm)(77.928mm,114.808mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2060mil|Location2.X=2070mil|Location1.Y=1785mil|Location2.Y=4305mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2060mil|Location2.X=2070mil|Location1.Y=1785mil|Location2.Y=4305mil|Absolute=True">Un-Routed Net Constraint: Track (52.451mm,45.466mm)(52.451mm,109.22mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2110mil|Location2.X=2855mil|Location1.Y=4345mil|Location2.Y=4355mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2110mil|Location2.X=2855mil|Location1.Y=4345mil|Location2.Y=4355mil|Absolute=True">Un-Routed Net Constraint: Track (53.721mm,110.49mm)(72.39mm,110.49mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2110mil|Location2.X=5980mil|Location1.Y=1735mil|Location2.Y=1745mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2110mil|Location2.X=5980mil|Location1.Y=1735mil|Location2.Y=1745mil|Absolute=True">Un-Routed Net Constraint: Track (53.721mm,44.196mm)(151.765mm,44.196mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2845mil|Location2.X=5990mil|Location1.Y=4345mil|Location2.Y=4355mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2845mil|Location2.X=5990mil|Location1.Y=4345mil|Location2.Y=4355mil|Absolute=True">Un-Routed Net Constraint: Track (72.39mm,110.49mm)(152.019mm,110.49mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3374.955mil|Location2.X=4435mil|Location1.Y=4515mil|Location2.Y=4525mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3374.955mil|Location2.X=4435mil|Location1.Y=4515mil|Location2.Y=4525mil|Absolute=True">Un-Routed Net Constraint: Track (85.851mm,114.808mm)(112.522mm,114.808mm) on Top Layer Dead Copper - Net Not Assigned.</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4561mil|Location2.X=4924mil|Location1.Y=1881mil|Location2.Y=2434mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4561mil|Location2.X=4924mil|Location1.Y=1881mil|Location2.Y=2434mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (116.713mm,60.96mm) from Top Layer to Bottom Layer And Via (124.206mm,48.641mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDVWVUUKZSFOCUBNPRPEO33BBX4HPGMZG4WUA1R5PJPEF45FBV5D2H"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5644.808mil|Location2.X=5825.192mil|Location1.Y=2351.54mil|Location2.Y=2531.924mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5644.808mil|Location2.X=5825.192mil|Location1.Y=2351.54mil|Location2.Y=2531.924mil|Absolute=True">Hole Size Constraint: (4.55mm &gt; 2.54mm) Pad J1-N(145.669mm,62.02mm) on Multi-Layer Actual Hole Size = 4.55mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5644.808mil|Location2.X=5825.192mil|Location1.Y=2068.076mil|Location2.Y=2248.46mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5644.808mil|Location2.X=5825.192mil|Location1.Y=2068.076mil|Location2.Y=2248.46mil|Absolute=True">Hole Size Constraint: (4.55mm &gt; 2.54mm) Pad J1-P(145.669mm,54.82mm) on Multi-Layer Actual Hole Size = 4.55mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5174.808mil|Location2.X=5355.192mil|Location1.Y=3901.54mil|Location2.Y=4081.924mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5174.808mil|Location2.X=5355.192mil|Location1.Y=3901.54mil|Location2.Y=4081.924mil|Absolute=True">Hole Size Constraint: (4.55mm &gt; 2.54mm) Pad J2-N(133.731mm,101.39mm) on Multi-Layer Actual Hole Size = 4.55mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5174.808mil|Location2.X=5355.192mil|Location1.Y=3618.076mil|Location2.Y=3798.46mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5174.808mil|Location2.X=5355.192mil|Location1.Y=3618.076mil|Location2.Y=3798.46mil|Absolute=True">Hole Size Constraint: (4.55mm &gt; 2.54mm) Pad J2-P(133.731mm,94.19mm) on Multi-Layer Actual Hole Size = 4.55mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4049.808mil|Location2.X=4230.192mil|Location1.Y=4036.54mil|Location2.Y=4216.924mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4049.808mil|Location2.X=4230.192mil|Location1.Y=4036.54mil|Location2.Y=4216.924mil|Absolute=True">Hole Size Constraint: (4.55mm &gt; 2.54mm) Pad J3-N(105.156mm,104.819mm) on Multi-Layer Actual Hole Size = 4.55mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4049.808mil|Location2.X=4230.192mil|Location1.Y=3753.076mil|Location2.Y=3933.46mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4049.808mil|Location2.X=4230.192mil|Location1.Y=3753.076mil|Location2.Y=3933.46mil|Absolute=True">Hole Size Constraint: (4.55mm &gt; 2.54mm) Pad J3-P(105.156mm,97.619mm) on Multi-Layer Actual Hole Size = 4.55mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2629.808mil|Location2.X=2810.192mil|Location1.Y=3846.54mil|Location2.Y=4026.924mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2629.808mil|Location2.X=2810.192mil|Location1.Y=3846.54mil|Location2.Y=4026.924mil|Absolute=True">Hole Size Constraint: (4.55mm &gt; 2.54mm) Pad J4-N(69.088mm,99.993mm) on Multi-Layer Actual Hole Size = 4.55mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2629.808mil|Location2.X=2810.192mil|Location1.Y=3563.076mil|Location2.Y=3743.46mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2629.808mil|Location2.X=2810.192mil|Location1.Y=3563.076mil|Location2.Y=3743.46mil|Absolute=True">Hole Size Constraint: (4.55mm &gt; 2.54mm) Pad J4-P(69.088mm,92.793mm) on Multi-Layer Actual Hole Size = 4.55mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.808mil|Location2.X=2835.192mil|Location1.Y=2351.54mil|Location2.Y=2531.924mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.808mil|Location2.X=2835.192mil|Location1.Y=2351.54mil|Location2.Y=2531.924mil|Absolute=True">Hole Size Constraint: (4.55mm &gt; 2.54mm) Pad J5-N(69.723mm,62.02mm) on Multi-Layer Actual Hole Size = 4.55mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.808mil|Location2.X=2835.192mil|Location1.Y=2068.076mil|Location2.Y=2248.46mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=2654.808mil|Location2.X=2835.192mil|Location1.Y=2068.076mil|Location2.Y=2248.46mil|Absolute=True">Hole Size Constraint: (4.55mm &gt; 2.54mm) Pad J5-P(69.723mm,54.82mm) on Multi-Layer Actual Hole Size = 4.55mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3622.21mil|Location2.X=3777.003mil|Location1.Y=2878.037mil|Location2.Y=3032.83mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3622.21mil|Location2.X=3777.003mil|Location1.Y=2878.037mil|Location2.Y=3032.83mil|Absolute=True">Hole Size Constraint: (3.9mm &gt; 2.54mm) Pad JVcc-N(93.97mm,75.068mm) on Multi-Layer Actual Hole Size = 3.9mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3622.21mil|Location2.X=3777.003mil|Location1.Y=3307.17mil|Location2.Y=3461.963mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3622.21mil|Location2.X=3777.003mil|Location1.Y=3307.17mil|Location2.Y=3461.963mil|Absolute=True">Hole Size Constraint: (3.9mm &gt; 2.54mm) Pad JVcc-P(93.97mm,85.968mm) on Multi-Layer Actual Hole Size = 3.9mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDS3HLCNOGPSAUG4J1JESVCJCHLHOAITWM0V1G11E3MEPV5ZHSG5FC"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4589.375mil|Location2.X=4600.625mil|Location1.Y=2426.895mil|Location2.Y=2438.145mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4589.375mil|Location2.X=4600.625mil|Location1.Y=2426.895mil|Location2.Y=2438.145mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.179mm &lt; 0.254mm) Between Pad C1-1(116.775mm,62.357mm) on Top Layer And Via (116.713mm,60.96mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.179mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4914.926mil|Location2.X=4926.176mil|Location1.Y=1909.375mil|Location2.Y=1920.625mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4914.926mil|Location2.X=4926.176mil|Location1.Y=1909.375mil|Location2.Y=1920.625mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (0.079mm &lt; 0.254mm) Between Pad D1-C(126.873mm,48.592mm) on Top Layer And Via (124.206mm,48.641mm) from Top Layer to Bottom Layer [Top Solder] Mask Sliver [0.079mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDAF5QKQJ2AMOWPOS0KLJGINUUNPE4ZIK5LPRXICIEKDUJWSL2Q5VC"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3523.001mil|Location2.X=3530.668mil|Location1.Y=2298.383mil|Location2.Y=2306.049mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3523.001mil|Location2.X=3530.668mil|Location1.Y=2298.383mil|Location2.Y=2306.049mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.254mm) Between Pad C4-1(89.742mm,58.039mm) on Multi-Layer And Text ".Designator" (88.749mm,57.404mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID4SB2PRHKK001LE3GBL1HVPWZYLBOLZOVWYKJ0C1ERHX0BXM0N1J"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=0.254mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4203.05mil|Location2.X=4214.3mil|Location1.Y=1974.844mil|Location2.Y=1986.094mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4203.05mil|Location2.X=4214.3mil|Location1.Y=1974.844mil|Location2.Y=1986.094mil|Absolute=True">Silk To Silk Clearance Constraint: (0.233mm &lt; 0.254mm) Between Arc (109.617mm,50.292mm) on Top Overlay And Text "+" (105.709mm,49.555mm) on Top Overlay Silk Text to Silk Clearance [0.233mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4213.05mil|Location2.X=4224.3mil|Location1.Y=2474.844mil|Location2.Y=2486.094mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4213.05mil|Location2.X=4224.3mil|Location1.Y=2474.844mil|Location2.Y=2486.094mil|Absolute=True">Silk To Silk Clearance Constraint: (0.233mm &lt; 0.254mm) Between Arc (109.871mm,62.992mm) on Top Overlay And Text "+" (105.963mm,62.255mm) on Top Overlay Silk Text to Silk Clearance [0.233mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDST1SGJ12APZYCJ2XO4XRQ5D1OFIKAYRNJLBTAZKG1E4WGPG5MBLL"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Net Antennae (Tolerance=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Coll%C3%A8ge Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4852.5mil|Location2.X=4939.22mil|Location1.Y=1877.5mil|Location2.Y=2017.841mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4852.5mil|Location2.X=4939.22mil|Location1.Y=1877.5mil|Location2.Y=2017.841mil|Absolute=True">Net Antennae: Via (124.206mm,48.641mm) from Top Layer to Bottom Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
