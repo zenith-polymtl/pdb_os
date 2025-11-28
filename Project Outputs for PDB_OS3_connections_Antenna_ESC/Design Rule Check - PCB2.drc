@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_connections_Antenna_ESC\PCB2.PcbDoc
 Date     : 2025-11-26
-Time     : 22:25:28
+Time     : 22:46:00
 
 Processing Rule : Clearance Constraint (Gap=0.254mm) (All),(All)
 Rule Violations :0
@@ -14,16 +14,6 @@ Processing Rule : Un-Routed Net Constraint ( (All) )
    Violation between Un-Routed Net Constraint: Arc (152.019mm,109.474mm) on Top Layer Dead Copper - Net Not Assigned.
    Violation between Un-Routed Net Constraint: Arc (53.721mm,109.22mm) on Top Layer Dead Copper - Net Not Assigned.
    Violation between Un-Routed Net Constraint: Arc (53.721mm,45.466mm) on Top Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Net GND Between Pad C3-2(110.617mm,50.292mm) on Multi-Layer And Pad C2-2(110.871mm,62.992mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad C4-1(89.742mm,58.039mm) on Multi-Layer And Pad C2-2(110.871mm,62.992mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad C2-2(110.871mm,62.992mm) on Multi-Layer And Via (116.713mm,60.96mm) from Top Layer to Bottom Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad C4-1(89.742mm,58.039mm) on Multi-Layer And Pad JVcc-N(93.97mm,75.068mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Track (69.723mm,62.02mm)(69.954mm,61.789mm) on Bottom Layer And Pad C4-1(89.742mm,58.039mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Via (116.713mm,60.96mm) from Top Layer to Bottom Layer And Pad J1-N(145.669mm,62.02mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad J3-N(105.156mm,104.819mm) on Multi-Layer And Pad J2-N(133.731mm,101.39mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad J4-N(69.088mm,99.993mm) on Multi-Layer And Pad J3-N(105.156mm,104.819mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad J4-N(69.088mm,99.993mm) on Multi-Layer And Pad J5-N(69.723mm,62.02mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Polygon  (NONET_L04_P000) on Bottom Layer Dead Copper - Net Not Assigned.
    Violation between Un-Routed Net Constraint: Split Plane  (No Net) on Int1 (GND) Dead Copper - Net Not Assigned.
    Violation between Un-Routed Net Constraint: Split Plane  (No Net) on Int2 (PWR) Dead Copper - Net Not Assigned.
    Violation between Un-Routed Net Constraint: Track (110.998mm,114.3mm)(112.522mm,114.808mm) on Top Layer Dead Copper - Net Not Assigned.
@@ -47,8 +37,7 @@ Processing Rule : Un-Routed Net Constraint ( (All) )
    Violation between Un-Routed Net Constraint: Track (53.721mm,44.196mm)(151.765mm,44.196mm) on Top Layer Dead Copper - Net Not Assigned.
    Violation between Un-Routed Net Constraint: Track (72.39mm,110.49mm)(152.019mm,110.49mm) on Top Layer Dead Copper - Net Not Assigned.
    Violation between Un-Routed Net Constraint: Track (85.851mm,114.808mm)(112.522mm,114.808mm) on Top Layer Dead Copper - Net Not Assigned.
-   Violation between Un-Routed Net Constraint: Net GND Between Via (116.713mm,60.96mm) from Top Layer to Bottom Layer And Via (124.206mm,48.641mm) from Top Layer to Bottom Layer 
-Rule Violations :38
+Rule Violations :27
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
@@ -95,13 +84,12 @@ Processing Rule : Silk to Silk (Clearance=0.254mm) (All),(All)
 Rule Violations :2
 
 Processing Rule : Net Antennae (Tolerance=0mm) (All)
-   Violation between Net Antennae: Via (124.206mm,48.641mm) from Top Layer to Bottom Layer 
-Rule Violations :1
+Rule Violations :0
 
 Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
 Rule Violations :0
 
 
-Violations Detected : 56
+Violations Detected : 44
 Waived Violations : 0
-Time Elapsed        : 00:00:01
+Time Elapsed        : 00:00:00
