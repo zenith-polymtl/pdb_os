@@ -67,23 +67,6 @@ GenerateClassCluster=0
 DocumentUniqueId=NNKUFXGM
 
 [Document2]
-DocumentPath=PDB - PCB.PcbDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=UNHCHWMP
-
-[Document3]
 DocumentPath=..\..\common\Libraries\Symbol_library.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -100,7 +83,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=BFSNZMMD
 
-[Document4]
+[Document3]
 DocumentPath=..\..\common\Libraries\Footprint_library.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -116,6 +99,23 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=CHHJJYXX
+
+[Document4]
+DocumentPath=PDB - PCB.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=XYRKARQU
 
 [Configuration1]
 Name=Sources
