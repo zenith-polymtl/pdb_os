@@ -1,0 +1,61 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\Lenovo\OneDrive - Collège Montmorency\Desktop\Altium Zenith\PDB_OS3_Alimentation_ESC\PDB_OS3_AlimentationV2.PcbDoc
+Date     : 2025-12-28
+Time     : 21:30:23
+
+Processing Rule : Clearance Constraint (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Rule Violations :0
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.254mm) (Max=0.254mm) (Preferred=0.254mm) (All)
+Rule Violations :0
+
+Processing Rule : Routing Topology Rule(Topology=Shortest) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (InNet('Net_P'))
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (InNet('GND'))
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Pad C4.2-1(15.981mm,28.446mm) on Top Layer And Text ".Designator" (14.989mm,27.811mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Pad D1.2-A(31.877mm,29.24mm) on Top Layer And Track (35.21mm,27.222mm)(36.48mm,27.222mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Pad D1.2-A(31.877mm,29.24mm) on Top Layer And Track (36.48mm,25.952mm)(36.48mm,27.222mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Pad D1.2-A(31.877mm,29.24mm) on Top Layer And Track (36.48mm,27.222mm)(36.48mm,28.492mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Pad D1.2-A(31.877mm,29.24mm) on Top Layer And Track (36.48mm,27.222mm)(37.75mm,27.222mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+Rule Violations :5
+
+Processing Rule : Silk to Silk (Clearance=0.254mm) (All),(All)
+   Violation between Silk To Silk Clearance Constraint: (0.233mm < 0.254mm) Between Arc (16.018mm,17.526mm) on Top Overlay And Text "+" (12.11mm,16.789mm) on Top Overlay Silk Text to Silk Clearance [0.233mm]
+   Violation between Silk To Silk Clearance Constraint: (0.233mm < 0.254mm) Between Arc (23.241mm,17.653mm) on Top Overlay And Text "+" (19.333mm,16.916mm) on Top Overlay Silk Text to Silk Clearance [0.233mm]
+Rule Violations :2
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 7
+Waived Violations : 0
+Time Elapsed        : 00:00:00
