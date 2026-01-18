@@ -118,7 +118,7 @@ GenerateClassCluster=0
 DocumentUniqueId=JBSGWUCW
 
 [Document5]
-DocumentPath=PDB.BomDoc
+DocumentPath=PDB BOM.BomDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
