@@ -112,6 +112,74 @@ DItemRevisionGUID=
 DocumentPath=Project Outputs for PDB_OS3_connections_Antenna_ESC\Design Rule Check - PDB_OS3_AlimentationV2.html
 DItemRevisionGUID=
 
+[GeneratedDocument4]
+DocumentPath=Project Outputs for PDB_OS3_connections_Antenna_ESC\NC Drill\PDB_OS3_AlimentationV2-RectHoles.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument5]
+DocumentPath=Project Outputs for PDB_OS3_connections_Antenna_ESC\NC Drill\PDB_OS3_AlimentationV2.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument6]
+DocumentPath=Project Outputs for PDB_OS3_connections_Antenna_ESC\Gerber\PDB_OS3_AlimentationV2.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument7]
+DocumentPath=Project Outputs for PDB_OS3_connections_Antenna_ESC\NC Drill\PDB_OS3_AlimentationV2.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument8]
+DocumentPath=Project Outputs for PDB_OS3_connections_Antenna_ESC\Gerber\PDB_OS3_AlimentationV2.REP
+DItemRevisionGUID=
+
+[GeneratedDocument9]
+DocumentPath=Project Outputs for PDB_OS3_connections_Antenna_ESC\NC Drill\PDB_OS3_AlimentationV2.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument10]
+DocumentPath=Project Outputs for PDB_OS3_connections_Antenna_ESC\Gerber\PDB_OS3_AlimentationV2_Copper_Signal_1.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument11]
+DocumentPath=Project Outputs for PDB_OS3_connections_Antenna_ESC\Gerber\PDB_OS3_AlimentationV2_Copper_Signal_2.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument12]
+DocumentPath=Project Outputs for PDB_OS3_connections_Antenna_ESC\Gerber\PDB_OS3_AlimentationV2_Copper_Signal_Bot.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument13]
+DocumentPath=Project Outputs for PDB_OS3_connections_Antenna_ESC\Gerber\PDB_OS3_AlimentationV2_Copper_Signal_Top.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument14]
+DocumentPath=Project Outputs for PDB_OS3_connections_Antenna_ESC\Gerber\PDB_OS3_AlimentationV2_Legend_Bot.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument15]
+DocumentPath=Project Outputs for PDB_OS3_connections_Antenna_ESC\Gerber\PDB_OS3_AlimentationV2_Legend_Top.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument16]
+DocumentPath=Project Outputs for PDB_OS3_connections_Antenna_ESC\Gerber\PDB_OS3_AlimentationV2_Paste_Bot.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument17]
+DocumentPath=Project Outputs for PDB_OS3_connections_Antenna_ESC\Gerber\PDB_OS3_AlimentationV2_Paste_Top.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument18]
+DocumentPath=Project Outputs for PDB_OS3_connections_Antenna_ESC\Gerber\PDB_OS3_AlimentationV2_Profile.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument19]
+DocumentPath=Project Outputs for PDB_OS3_connections_Antenna_ESC\Gerber\PDB_OS3_AlimentationV2_Soldermask_Bot.gbr
+DItemRevisionGUID=
+
+[GeneratedDocument20]
+DocumentPath=Project Outputs for PDB_OS3_connections_Antenna_ESC\Gerber\PDB_OS3_AlimentationV2_Soldermask_Top.gbr
+DItemRevisionGUID=
+
 [Configuration1]
 Name=Sources
 ParameterCount=0
@@ -767,14 +835,6 @@ Type148=1
 Type149=1
 Type150=1
 Type151=1
-Type152=1
-Type153=1
-Type154=1
-Type155=1
-Type156=1
-Type157=1
-Type158=1
-Type159=1
 
 [Difference Levels]
 Type1=1
@@ -859,11 +919,6 @@ Type79=1
 Type80=1
 Type81=1
 Type82=1
-Type83=1
-Type84=1
-Type85=1
-Type86=1
-Type87=1
 
 [Electrical Rules Check]
 Type1=1
@@ -1027,8 +1082,6 @@ Type158=0
 Type159=0
 Type160=0
 Type161=0
-Type162=1
-Type163=1
 
 [ERC Connection Matrix]
 L1=NNNNNNNNNNNWNNNWW
